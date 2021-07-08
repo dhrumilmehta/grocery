@@ -1,0 +1,717 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+$bgcolor-grey: rgb(247, 247, 247);
+$bgcolor-white: rgb(255, 255, 255);
+$color-green:rgb(0, 158, 127);
+$color-grey: rgb(119, 121, 140);
+$color-black:  rgb(13, 17, 54);
+$dis: flex;
+$align-items:center;
+$pos: relative;
+$cursor: pointer;
+$justify-content: center;
+$font-family: Lato, sans-serif;
+$overflow: hidden;
+$f-weight:700;
+$dis-none: none;
+
+@mixin sec-style {
+    display: $dis;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+@mixin sec-style1 {
+    display: $dis;
+    align-items: $align-items;
+}
+@mixin sec-style2 {
+    display: $dis;
+    justify-content: space-between;
+    align-items: $align-items;
+}
+@mixin adjust{
+    width: 100%;
+    height: 100%;
+}
+@mixin carousel-button{
+    height: 40px;
+    width: 40px;
+    @include sec-style();
+    background-color: $bgcolor-white;
+    color: $color-green;
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px;
+    border: 0px;
+    outline: 0px;
+    cursor: $cursor;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 99;
+}
+.headerstyle
+{
+    padding: 20px 30px;
+    @include sec-style2();
+    position: fixed;
+    z-index: 99999;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: $bgcolor-grey;
+    
+    .left-menustyle
+    {
+     @include sec-style2();
+    flex-shrink: 0;
+
+    .logostyle
+    {
+        color: $color-black;
+        font-size: 26px;
+        font-weight: $f-weight;
+        cursor: $cursor;
+        margin-right: 0px;
+        @include sec-style();
+    }
+    .logoimage
+    {
+    display: block;
+    backface-visibility: hidden;
+    max-width: 120px;
+    }
+    .mainmenu
+    {
+        display:$dis;
+        align-items: $align-items;
+    }
+    .popover1
+    {
+        margin-left: 10px;
+        position: $pos;
+        cursor: $cursor;
+        .popover-handler
+        {
+            display: inline-block;
+            cursor: $cursor;
+        }
+    }
+    .left-menustyle_button
+    {
+        width: auto;
+        height: 38px;
+        @include sec-style1();
+        background-color: $bgcolor-white;
+        border: 1px solid rgb(241,241,241);
+        padding: 0px 15px;
+        outline: 0px;
+        min-width: 150px;
+        cursor: $cursor;
+    }
+    .left-menustyle_button span{
+      @include sec-style1();
+      font-family: $font-family;
+      font-size: 17px;
+      font-weight: $f-weight;
+      color: $color-green;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .left-menustyle_button svg {
+        min-width: 15px;
+        max-width: 20px;
+        max-height: 19px;
+    }
+    .left-menustyle2{
+        margin-right: 7px;
+        @include sec-style();
+        min-width: 16px;
+    }
+    }
+    .right-menustyle{
+        @include sec-style1();
+        flex-shrink: 0;
+
+        .menu-item a{
+            font-family: $font-family;
+            font-size: 17px;
+            font-weight: $f-weight;
+            color: $color-black;  
+            line-height: 1.2em;
+            @include sec-style1();
+            margin-right: 45px;
+        }
+        .menu-icon{
+            min-width: 14px;
+            margin-right: 7px;  
+        }
+        .language-switchstyle
+        {
+         margin-right: 20px;
+        }
+        .popover2
+        {
+        position: $pos;
+        cursor: $cursor;
+        margin-right: 15px;
+
+        .popover-handler{
+            display: inline-block;
+            cursor: $cursor;
+        }
+        }
+        .button-lang
+        {
+        width: auto;
+        height: 38px;
+        @include sec-style1();
+        background-color: $bgcolor-white;
+        border: 1px solid rgb(241, 241, 241);
+        padding: 0px 10px;
+        border-radius: 6px;
+        outline: 0px;
+        cursor: $cursor;
+
+        .language{
+        margin-right: 7px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 0px 3px;
+        @include sec-style();
+        border-radius: 2px;
+        overflow: $overflow;
+        }
+        .language svg{
+            width: 20px;
+             height: auto;
+        }
+        .button-lang  span {
+            @include sec-style1();
+            font-family: $font-family;
+            font-size: 15px;
+            font-weight: $f-weight;
+            color: $color-green;
+            text-decoration: none;
+        }
+        }
+        .StyledButton
+        {
+        padding: 0px 15px;
+        font-size: 15px;
+        font-weight: $f-weight;
+        cursor: $cursor;
+        border-radius: 6px;
+        appearance: none;
+        @include sec-style();
+        flex-shrink: 0;
+        text-align: $align-items;
+        height: 38px;
+        text-decoration: none;
+        font-family: inherit;
+        border: 0px;
+        color: $bgcolor-grey;
+        background-color: $color-green;
+        }
+
+    }
+}
+.container-banner
+{
+    @include sec-style();
+    flex-direction: column;
+    width: 100%;
+    position: $pos;  
+
+    .bannerstyle__Image
+    {
+    background-size: cover;
+    @include adjust();
+    display: $dis;
+    background-image: url("https://shop-redq.vercel.app/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+    .bannerstyle__Content
+    {
+    padding-top: 270px;
+    padding-bottom: 250px;
+    position: $pos;
+    z-index: 2;
+    width: 100%;
+   }
+   .bannerstyle__Title
+    {
+    font-size: 50px;
+    color: $color-black;
+    font-weight: $f-weight;
+    margin-bottom: 20px;
+    text-align: $align-items;
+    }
+    .bannerstyle__Description
+    {
+    font-size: 20px;
+    color: $color-grey;
+    display: block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: $align-items;
+    }
+    .bannerstyle__SearchWrapper
+    {
+    display: $dis;
+    justify-content: $justify-content;
+    margin-top: 50px;
+    }
+    .search-boxstyle
+    {
+    @include sec-style1();
+    border-radius: 6px;
+    overflow: $overflow;
+    width: 700px;
+    color: $color-grey;
+    background-color: $bgcolor-white;
+    border-width: 0px;
+    border-style: solid;
+    border-color: $bgcolor-white;
+    box-shadow: rgb(0 0 0 / 5%) 0px 21px 36px;
+    }
+    .search-option
+    {
+    font-size: 14px;
+    font-weight: $f-weight;
+    line-height: 38px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: $color-green;
+    background-color: $bgcolor-grey;
+    border-radius: 6px;
+    margin: 5px;
+    white-space: nowrap;
+    text-transform: capitalize;
+    }
+    .searchbar
+    {
+    flex-grow: 1;
+    font-size: 15px;
+    padding-right: 20px;
+    height: 48px;
+    color: $color-grey;
+    background-color: inherit;
+    appearance: none;
+    border: 0px;
+    }
+    .search-button
+    {
+    background-color: $color-green;
+    color: $bgcolor-white;
+    font-size: 15px;
+    font-weight: $f-weight;
+    @include sec-style1();
+    height: 48px;
+    border: 0px;
+    outline: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: $cursor;
+    flex-shrink: 0;
+    }   
+}
+
+.carousel-item
+{
+    padding: 60px;
+    margin: auto;
+ width: 1520px;
+}    
+.carousel-control-prev-icon
+{
+    
+    padding: 20px;
+    border-radius: 100%;
+    left: 20px;
+    
+}
+.carousel-control-next-icon{
+    padding: 20px;
+    border-radius: 100%;
+    right: 20px; 
+}
+.pagesstyle_maincontentarea
+{
+        width: 100%;
+        display: $dis;
+        flex-wrap: wrap;
+        background-color: $bgcolor-grey;
+        padding-right: 0px;
+        transition: padding-right 0.35s ease-in-out 0s;
+       
+        .pagesstyle_sidebarsection
+        {
+            background-color: $bgcolor-white;
+            width: 280px;
+            
+            .sidebarstyle_category{
+                padding-top: 40px;
+                position: $pos;
+                width: 100%;
+
+                .sidebarstyle_treewrapper
+                {
+                    padding-left: 50px;
+                    padding-right: 20px;
+                }
+                .tree-menustyle_Frame
+                {
+                    margin-bottom: 15px;
+                    padding-left: 0px;
+                    position: $pos;
+                    overflow-x: $overflow;
+                }
+                .tree-menustyle_Header
+                {
+                    font-size: 15px;
+                    font-weight: 500;
+                    @include sec-style1();
+                    margin-bottom: 12px;
+                    color:$color-black;
+                    cursor: $cursor;
+                    transition: all 0.15s ease-in-out 0s;
+                    padding: 5px 0px;
+                    outline: 0px;
+                }
+                .tree-menustyle_IconWrapper
+                {
+                 width: 20px;
+                 height: auto;
+                 margin-right: 15px;
+                 @include sec-style();
+                 overflow: $overflow;
+                 flex-shrink: 0;
+                }
+                .tree-menustyle__Title
+                {
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  vertical-align: middle;
+                  overflow: $overflow;
+                }
+               .tree-menustyle_Header .toggleButton
+                {
+                  color: $color-black;
+                  padding: 0px 5px;
+                  margin-left: auto;
+                  height: auto;
+                  transition: transform 0.3s ease 0s;
+                }
+                .button_StyledButton
+                {
+                 padding: 0px 15px;
+                 font-size: 15px;
+                 font-weight: 700;
+                 cursor: pointer;
+                 transition: all 0.3s ease 0s;
+                 border-radius: 6px;
+                 appearance: none;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 flex-shrink: 0;
+                 text-align: center;
+                 height: 38px;
+                 text-decoration: none;
+                 font-family: inherit;
+                 border: 0px;
+                 background-color: transparent;
+                }
+            }
+        }
+     .pagesstyle_ContentSection
+     {
+
+        width: calc(100% - 280px);
+        height: auto;
+        min-height: 100vh;
+        padding: 30px 30px 50px;
+         
+        .product-liststyle_ProductsRow
+        {
+
+            display: $dis;
+            flex-wrap: wrap;
+            background-color: $bgcolor-grey;
+            position: $pos;
+            z-index: 1;
+            margin: 0px -15px;
+
+            .product-liststyle_ProductsCol{
+                flex: 0 0 20%;
+                max-width: 20%;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-bottom: 30px;
+            } 
+            .product-liststyle_ProductCardWrappe{
+                height: 100%;
+            }
+            .react-reveal{
+                animation-fill-mode: both;
+                 animation-duration: 800ms; 
+                 animation-delay: 0ms; 
+                 animation-iteration-count: 1; 
+                 opacity: 1; 
+                 animation-name: react-reveal-947213358556862-1;
+            }
+            .product-cardstyle_ProductCardWrapper{
+                @include adjust();
+                background-color: $bgcolor-white;
+                position: $pos;
+                font-family: inherit;
+                border-radius: 6px;
+                cursor: $cursor;
+            }
+            .product-cardstyle_ProductImageWrapper{
+                height: 240px;
+                padding: 5px;
+                position: $pos;
+                text-align: $align-items;
+                @include sec-style();
+            }
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                display: inline-block;
+            }
+            .product-cardstyle_ProductInfo
+            {
+                padding: 20px 25px 30px;
+
+                .product-title
+                {
+                    font-family: $font-family;
+                    font-size: 15px;
+                    font-weight:$f-weight;
+                    color: $color-black;
+                    margin: 0px 0px 7px;
+                    width: 100%;
+                    overflow: $overflow;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .product-weight {
+                    font-family: $font-family;
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: $color-grey;
+                }
+                .product-meta
+                {
+                    margin-top: 30px;
+                    @include sec-style2();
+                    position: $pos;
+
+                    .cart-button {
+                        border: 2px solid $bgcolor-grey;
+                        border-radius: 18px;
+                        height: 36px;
+                        padding-left: 17px;
+                        padding-right: 17px;
+                        font-size: 13px;
+                        font-weight: $f-weight;
+                    }
+
+                    .productPriceWrapper
+                    {
+                        position: $pos;
+                        display: $dis;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .product-price 
+                        {
+                            font-family: $font-family;
+                            font-size: 15px;
+                            font-weight: $f-weight;
+                            color: $color-green;
+                        }
+                        .discountedPrice 
+                        {
+                            font-family: $font-family;
+                            font-size: 13px;
+                            font-weight: 400;
+                            color: rgb(255, 179, 105);
+                            font-style: italic;
+                            padding: 0px 5px;
+                            overflow: $overflow;
+                            position: absolute;
+                            top: -20px;
+                            left: -4px;
+                        }
+                    }
+
+                }
+                
+                .button__StyledButton-sc{
+                    padding: 0px 15px;
+                    font-size: 15px;
+                    font-weight: $f-weight;
+                    cursor: $cursor;
+                    transition: all 0.3s ease 0s;
+                    appearance: none;
+                    @include sec-style();
+                    flex-shrink: 0;
+                    text-align: $align-items;
+                    height: 38px;
+                    text-decoration: none;
+                    font-family: inherit;
+                    color: $color-green;
+                    background-color: $bgcolor-white;
+                    border: 2px solid rgb(241, 241, 241);
+                    border-radius: 100px;
+                }
+                .box_Box-sc
+                {
+                    box-sizing: border-box;
+                    min-width: 0px;
+                    margin: 0px 8px 0px 0px;
+                    width: 14.4px;
+                    height: 12px;
+                }
+            }
+            .product-cardstyle_DiscountPercent{
+                font-family: $font-family;
+                font-size: 13px;
+                font-weight: $f-weight;
+                color: $bgcolor-white;
+                line-height: 24px;
+                background-color: rgb(255, 173, 94);
+                padding-left: 10px;
+                padding-right: 10px;
+                display: inline-block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                border-radius: 12px;
+                z-index: 2;
+            }
+
+        }
+     }    
+}
+@media only screen and (max-width: 1025px){
+    
+    .pagesstyle_maincontentarea .pagesstyle_ContentSection .product-liststyle_ProductsRow .product-liststyle_ProductsCol{
+        flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+   }
+   .carousel-item{
+       width: 1030px;
+   }
+    
+}
+@media only screen and (max-width: 770px){
+    
+    .container-banner   .bannerstyle__Image{
+        background-size: cover;
+        @include adjust();
+}
+.container-banner .bannerstyle__Content {
+  padding-top: 150px;
+  padding-bottom: 100px;
+    }
+    .container-banner .bannerstyle__Title {
+        
+        font-size: 25px;
+        text-align: $align-items;
+    }
+    .container-banner .bannerstyle__Description{
+        font-size: 15px;
+        text-align: $align-items;
+    }
+    .container-banner .search-boxstyle{
+        width: 500px;
+    }
+    
+    .carousel-item{
+        width:770px;
+    }
+    
+    .pagesstyle_maincontentarea .pagesstyle_ContentSection .product-liststyle_ProductsRow .product-liststyle_ProductsCol{
+        flex: 0 0 50%;
+    max-width: 50%;
+   }
+    
+}
+@media only screen and (max-width: 415px){
+    .headerstyle .left-menustyle .left-menustyle_button{
+        display: $dis-none;
+    }
+    .menu-item{
+        display: $dis-none;
+    }
+    .container-banner {
+        background-color: $bgcolor-grey;
+        
+        .bannerstyle__Image{
+            display: $dis-none;
+         }
+          .bannerstyle__Content {
+             padding-top: 80px;
+             padding-bottom: 50px;
+               }
+               .bannerstyle__SearchWrapper {
+                   margin-top: 15px;
+               }
+         .bannerstyle__Title {
+             font-weight: 300;
+             font-size: 20px;
+             text-align: $align-items;
+             margin-bottom: 10px;
+         }
+         .bannerstyle__Description{
+             display: $dis-none;
+         
+         }
+    }
+     
+    .searchbar {
+        text-align: $align-items;
+    }
+    .search-option{
+        display: $dis-none;
+    }
+    .container-banner .search-button
+    {
+        display: $dis-none;
+    }
+    .container-banner .search-boxstyle{
+        width: 350px;
+    }
+    .carousel-item{
+        width: 357px;
+    }
+    .pagesstyle_sidebarsection{
+        display: $dis-none;
+    }
+    .pagesstyle_maincontentarea .pagesstyle_ContentSection{
+        width: 100%;
+        padding: 2px 0px;
+    }
+    .pagesstyle_maincontentarea .pagesstyle_ContentSection .product-liststyle_ProductsRow {
+        margin: 0px;
+    }
+    .pagesstyle_maincontentarea .pagesstyle_ContentSection .product-liststyle_ProductsRow .product-liststyle_ProductsCol{
+        flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+   }
+   .pagesstyle_maincontentarea .pagesstyle_ContentSection .product-liststyle_ProductsRow  .product-cardstyle_ProductInfo {
+    padding: 10px 20px 20px;
+}
+}
